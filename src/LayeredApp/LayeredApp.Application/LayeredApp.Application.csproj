@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LayeredApp.Domain\LayeredApp.Domain.csproj" />
+    <ProjectReference Include="..\LayeredApp.Model\LayeredApp.Model.csproj" />
+    <ProjectReference Include="..\LayeredApp.Repository\LayeredApp.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

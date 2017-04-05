@@ -1,13 +1,16 @@
-This example shows how to create REST API with dotnet core and postgreSQL on MAC OS X
-Discovered topics:
-1. EF works with PostgreeSQL
-2. Migrations
-3. Versioning
-4. REST API
-5. I’ve got plans for the next bunch of things:
-	- Add Unit of Work pattern and create more layers (projects)
-	- Add OAUTH 2.0
+This examples demonstrate how to use .Net core on MAC OS X
 
+I used 
+1. PostgreeSQL 
+2. ASP.NET API  with versioining
+3. EF with migrations
+
+Discovered topcis
+1. Unit of Work pattern 
+2. Layered App
+3. Logging in NetCore?
+4. Automapper?
+5. OAUTH 2.0
 
 
 Requirements:
