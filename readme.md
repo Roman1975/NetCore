@@ -2,14 +2,16 @@ This examples demonstrate how to use .Net core on MAC OS X
 
 I used 
 1. PostgreeSQL 
-2. ASP.NET API  with versioining
+2. ASP.NET CORE API with versioining
 3. EF with migrations
+4. ASP.NET CORE MVC with Tag helpers and attribute validation for View Model
 
 Discovered topcis
 1. Unit of Work pattern 
 2. Layered App
-3. Logging in NetCore?
-4. Automapper?
+3. Automapper
+4. ASP.NET Core Tag Helpers
+4. Logging infrastructure in NetCore?
 5. OAUTH 2.0
 
 
