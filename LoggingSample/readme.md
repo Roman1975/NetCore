@@ -21,6 +21,6 @@ Before you need to configure Azure log streaming. Turn on application logging (F
 4. To change log level without app publishing we can use filtering in config files. _Warning_: only for supported providers, like debug, console, for azure it works from azure console. My choise for this app: Warning.
 
 ### Links
-1. ![High-performance logging with LoggerMessage](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/loggermessage)
-2. ![Introduction to Logging in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/?tabs=aspnetcore2x)
-3. ![Where to Find Azure App Service Logs for Your App, IIS, Failed Request Tracing, etc](https://stackify.com/azure-app-service-log-files/)
+1. [High-performance logging with LoggerMessage](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/loggermessage)
+2. [Introduction to Logging in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/?tabs=aspnetcore2x)
+3. [Where to Find Azure App Service Logs for Your App, IIS, Failed Request Tracing, etc](https://stackify.com/azure-app-service-log-files/)

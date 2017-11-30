@@ -1,6 +1,6 @@
 This example shows how to create layered app with pattern UnitOfWork
 
-### layred app consist of:
+### parts of layered app:
 - Domain layer: the best place for dbcontext, domain model (POCO), migration
 - Repository layer: best suited for UnitOfWork and Repository
 - Model layer: could be the DTO or ViewModel depends on your needs
