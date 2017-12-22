@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <UserSecretsId>aspnet-netcore-05D01ED8-38DE-4E09-98B6-4658152FAEF0</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\Migrations-initial\**" />
+    <Compile Remove="Data\Migrations-netcore-manual\**" />
+    <Compile Remove="Data\Migrations-netfull\**" />
+    <Content Remove="Data\Migrations-initial\**" />
+    <Content Remove="Data\Migrations-netcore-manual\**" />
+    <Content Remove="Data\Migrations-netfull\**" />
+    <EmbeddedResource Remove="Data\Migrations-initial\**" />
+    <EmbeddedResource Remove="Data\Migrations-netcore-manual\**" />
+    <EmbeddedResource Remove="Data\Migrations-netfull\**" />
+    <None Remove="Data\Migrations-initial\**" />
+    <None Remove="Data\Migrations-netcore-manual\**" />
+    <None Remove="Data\Migrations-netfull\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="app_data\app.db" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.1" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
+    <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+</Project>

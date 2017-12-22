@@ -1,0 +1,17 @@
+1. create new mvc app on netframework 4.6 with identity framework in VS2015
+2. Change string to int for UserId, see MyUser, MyRole etc in file MyIdentityUser.cs
+3. Customize IdenityUser model, see IMyUserCustomization
+4. Create migration, update database
+5. Run and register 2 accounts
+6. Create new netcore mvc project with identity framework
+7. Rename folder Migrations and remove from project
+8. Switch database to sql express, copy database files from netframework 4.6.1
+9. Customize ApplicationUser model, key to int, implement IMyUserCustomization
+10. Check database diffs with identity framework
+11. Add first netcore migration, run add-migration netcore_initial
+12. Clean Up and Down in netcore_initial
+14. Add new migration to: add new fields to old tables and create two new tables, also update aspnetusers data
+15. back up old database, that I copied from net 4.6
+16. run update-database
+17. run and check aspnet users - it works!
+
