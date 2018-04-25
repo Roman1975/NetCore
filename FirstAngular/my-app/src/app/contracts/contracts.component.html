@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-xl-12 d-flex justify-content-between align-items-center" role="button">
+        <a class="btn btn-outline-secondary" routerLink='/search'><i class="fa fa-search"></i><span>Знайти договір</span></a>
+        <a href="#" class="btn btn-outline-secondary"><i class="fa fa-sort"></i><span>Сортувати</span></a>
+    </div>
+
+    <div class="col-md-6 mt-3" *ngFor="let item of contracts">
+        <div class="card">
+
+            <div class="card-body">
+                <h5 class="card-title d-block" (click)="onSelect(item)" onclick="showForm(this);">{{item.title}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{item.contractSupplier}}({{item.contractType}} )</h6>
+                <p class="card-text">Договір: {{item.number}}, {{item.address}}</p>
+                <a class="btn btn-outline-primary float-right" routerLink="/contracts/{{item.id}}">
+                    <span>Докладніше</span>
+                    <i class="fa fa-arrow-right"></i>
+                </a>
+
+                <button class="btn btn-outline-danger">
+                    <i class="fa fa-times"></i>
+                    <span class="d-none d-md-inline">Видалити</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div *ngIf="selectedItem">
+    <input [(ngModel)]="selectedItem.title" placeholder="friendly name">
+
+    <div class="input-group">
+            <input [(ngModel)]="selectedItem.title" maxlength="64" class="form-control" placeholder="Власна назва" required autocomplete="on" />
+
+            <div class="input-group-append">
+                <button class="btn btn-outline-primary" type="button"><i class="fa fa-save fa-lg"></i></button>
+            </div>
+
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="cancel" name="cancel" onclick="hideForm(this);"><i class="fa fa-times fa-lg"></i></button>
+            </div>
+        </div>
+</div>

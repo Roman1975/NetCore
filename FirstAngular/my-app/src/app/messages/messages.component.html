@@ -1,0 +1,10 @@
+<div class="alert alert-info alert-dismissible fade show" role="alert" *ngIf="messageService.messages.length">
+    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+    <ul>
+        <li *ngFor='let message of messageService.messages'> {{message}} </li>
+    </ul>
+
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="messageService.clear()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+</div>

@@ -1,0 +1,19 @@
+<h2>Join</h2>
+
+<hr />
+
+<form (ngSubmit)="onSubmit()" #pinForm="ngForm">
+    <div class="form-group">
+        <label for="pinCode" class="control-label">Введіть код підтвердження</label>
+        <input id="pinCode" name="pinCode" [(ngModel)]="pinCode" class="form-control" required autofocus aria-describedby="pinHelp" />
+        <small id="pinHelp" class="form-text text-muted">Код вислано на зазначену в договорі поштову адресу.</small>
+
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-outline-primary" [disabled]="!pinForm.form.valid">Підтвердити</button> |
+        <a routerLink="/search" class="btn-link">До пошуку</a>
+    </div>
+</form>
+
+<span class="text-danger" [hidden]="!(submitted || pinCorrect)" class="text-danger">Код не підійшов, спробуй ще :)</span>
+

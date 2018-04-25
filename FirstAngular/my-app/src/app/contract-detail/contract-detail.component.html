@@ -1,0 +1,13 @@
+<div *ngIf="contract">
+
+    <h2>{{ contract.number | uppercase }} Details</h2>
+    <div><span>id: </span>{{contract.id}}</div>
+    <div>
+      <label>name:
+        <input [(ngModel)]="contract.number" placeholder="name"/>
+      </label>
+    </div>
+  
+  </div>
+
+  <a routerLink="/contracts" class="btn-link"><i class="fa fa-arrow-left"></i> До списку договорів</a>

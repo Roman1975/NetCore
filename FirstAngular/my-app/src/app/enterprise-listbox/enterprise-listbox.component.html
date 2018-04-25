@@ -1,0 +1,5 @@
+<!--reactive forms-->
+<select [(ngModel)]="selectedEnterprise" (change)="onSelect()" class="custom-select">
+  <option [ngValue]="null">оберіть значення зі списку ...</option>
+  <option *ngFor="let item of enterprises" [ngValue]="item">{{item.name}}</option>
+</select>

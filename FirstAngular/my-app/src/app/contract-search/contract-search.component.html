@@ -1,0 +1,32 @@
+<form (ngSubmit)="onSubmit()" #contractSearchForm="ngForm">
+        <div class="form-group">
+            <label for="number">Введіть номер Вашого договору</label>
+            <input id="number" name="number" class="form-control" type="text" [(ngModel)]="model.number" aria-describedby="numberHelp" placeholder="номер договору" required autofocus #spy/>
+            <!-- <br>TODO: remove this: {{spy.className}}> -->
+            <small id="numberHelp" class="form-text text-muted">Номер договору вказаний на Вашому рахунку.</small>
+            <!-- <span [hidden]="model.number.valid || model.number.pristine" class="text-danger">Номер договору є обов'язковим</span> -->
+        </div>
+
+        <div class="form-group">
+            <label for="enterpriseId" class="control-label">Оберіть контрагента</label>
+
+            <select [(ngModel)]="model.enterpriseId" class="custom-select" id="enterpriseId" name="enterpriseId">
+                <option [value]="null">оберіть значення зі списку ...</option>
+                <option *ngFor="let item of enterprises" [value]="item.id">{{item.name}}</option>
+              </select>
+            
+            <!-- <span class="text-danger" [hidden]="model.enterpriseId.valid || model.enterpriseId.pristine" class="text-danger">Контрагент є обов'язковим</span> -->
+        </div>
+
+    <button type="submit" class="btn btn-outline-primary" [disabled]="!contractSearchForm.form.valid"><i class="fa fa-lg fa-search"></i> Виконати пошук</button>
+    <button type="button" class="btn btn-outline-secondary" (click)="contractSearchForm.reset()">Очистити</button> | <a routerLink="/contracts" class="alert-link">Повернутись до списку договорів</a>
+</form>
+
+{{model.enterpriseId}} - {{model.number}} 
+
+<div [hidden]="!contracts">
+    <div class="mb-5"></div>
+    <h2>Результати пошуку</h2>
+    <app-contract-list [items]="contracts"></app-contract-list>
+    <div class="mb-5"></div>
+</div>

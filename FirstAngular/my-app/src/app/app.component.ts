@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'My first angular app!';
+  
+  pageTitle = 'Welcome to the SelfService Angular frontend!';
+
+  onNotify(title:string):void {
+    this.pageTitle = title;
+  }
 }

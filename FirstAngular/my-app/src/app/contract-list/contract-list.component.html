@@ -1,0 +1,23 @@
+<table class="table table-hover">
+    <caption *ngIf="items">Знайдено договорів: {{items.length}}</caption>
+    <thead>
+        <tr>
+            <th scope="col">Номер договору</th>
+            <th scope="col">Адреса</th>
+            <th scope="col">Мобільний</th>
+            <th scope="col">Email</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of items">
+            <th scope="row">{{item.number}}</th>
+            <td>{{item.address}}</td>
+            <td>{{item.phone}}</td>
+            <td>{{item.email}}</td>
+            <td>
+                <button [disabled]="(item.email.len>0)" routerLink="/search/join/{{item.id}}" class="btn btn-outline-primary"><i class="fa fa-plus-square"></i> Додати</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
