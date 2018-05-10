@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2043
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalizationFirst", "src\LocalizationFirst\LocalizationFirst.csproj", "{1F8CE8F2-D6A3-428D-80F8-1A620FEE04BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{22232EB1-CEF4-4064-8CE1-05055CFE55CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0F4F9779-7DB3-4B58-867B-90E1CA4A80A0}"
+	ProjectSection(SolutionItems) = preProject
+		readme.md = readme.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F8CE8F2-D6A3-428D-80F8-1A620FEE04BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F8CE8F2-D6A3-428D-80F8-1A620FEE04BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F8CE8F2-D6A3-428D-80F8-1A620FEE04BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F8CE8F2-D6A3-428D-80F8-1A620FEE04BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9A4D6DD0-D4F4-434A-8458-12E7D7B1B98F}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1F8CE8F2-D6A3-428D-80F8-1A620FEE04BD} = {22232EB1-CEF4-4064-8CE1-05055CFE55CC}
+	EndGlobalSection
+EndGlobal
