@@ -1,0 +1,28 @@
+﻿@model IEnumerable<LocalizationSample.Models.RequestModel>
+
+@{
+    ViewData["Title"] = Localizer["My requests"];
+}
+
+<h2>@Localizer["My requests"]</h2>
+<hr />
+<h4>@Localizer["here you can see yours requests and create new"]</h4>
+
+<a asp-action="Create" class="btn btn-default">@Localizer["New request"]</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Localizer["Email"]</th>
+            <th>@Localizer["Text"]</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>@item.Email</td>
+            <td>@item.Text</td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,50 @@
+﻿@model LocalizationSample.Models.RequestModel
+@{
+    ViewData["Title"] = Localizer["New request"];
+    var textFieldName = Localizer["Text"].Value;
+    var textFieldLenVal = Localizer["The Text must be at least {0} characters long. but less than {1}"].Value;
+}
+
+<h2>@Localizer["New request"]</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <!--<label asp-for="Email" class="control-label"></label>-->
+                <label for="Email" class="control-label">@Localizer["Email"]</label>
+                <!--<input asp-for="Email" class="form-control" autofocus autocomplete="on" />-->
+                <input class="form-control" autofocus autocomplete="on" type="email" 
+                    data-val="true" data-val-email='@Localizer["The Email field is not a valid e-mail address."]'
+                    data-val-required='@Localizer["The Email field is required."]'
+                    id="Email" name="Email" value="">
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text" class="control-label"></label>
+                <!-- <label for="Text" class="control-label">@textFieldName</label> -->
+                <!-- <textarea rows="5" asp-for="Text" class="form-control"></textarea> -->
+
+                <textarea rows="5" class="form-control" data-val="true" 
+                    data-val-length="@textFieldLenVal" 
+                    data-val-length-max="255" data-val-length-min="6" 
+                    data-val-required='@Localizer["The Text field is required."]' 
+                    id="Text" name="Text">@(Model.Text)</textarea>
+                <span asp-validation-for="Text" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-default">@Localizer["Save"]</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">@Localizer["Back to list"]</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

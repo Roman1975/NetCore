@@ -1,0 +1,66 @@
+
+#.msgctxt "Controllers.RequestController"
+msgid "some message from controller"
+msgstr "якесь повідомлення від контроллера"
+
+#.msgctxt "Models.RequestModel"
+msgid "Email"
+msgstr "Електронна адреса"
+
+#.msgctxt "Models.RequestModel"
+msgid "Text"
+msgstr "Текст звернення"
+
+#.msgctxt "Models.RequestModel"
+msgid "The Email field is not a valid e-mail address."
+msgstr "Невірний формат електронної адреси"
+
+#.msgctxt "Models.RequestModel"
+msgid "The Email field is required."
+msgstr "Введіть електронну адресу"
+
+#.msgctxt "Models.RequestModel"
+msgid "The Text field is required."
+msgstr "Введіть текст звернення"
+
+#.msgctxt "Models.RequestModel"
+#.msgid "The {0} must be at least {2} characters long. but less than {1}"
+#.msgstr "{0} має містити від {2} до {1} символів"
+msgid "The Text must be at least {0} characters long. but less than {1}"
+msgstr "Текст звернення має містити від {0} до {1} символів"
+
+msgctxt "Views.Request.Index"
+msgid "New request"
+msgstr "Нове звернення"
+
+msgctxt "Views.Request.Index"
+msgid "Email"
+msgstr "Електронна адреса"
+
+msgctxt "Views.Request.Index"
+msgid "here you can see yours requests and create new"
+msgstr "Тут ви можете переглянути ваші зверення та створити нове"
+
+msgctxt "Views.Request.Index"
+msgid "Text"
+msgstr "Текст звернення"
+
+msgctxt "Views.Request.Index"
+msgid "My requests"
+msgstr "Мої зверення"
+
+msgctxt "Views.Request.Create"
+msgid "Back to list"
+msgstr "Повернутись до списку"
+
+msgctxt "Views.Request.Create"
+msgid "Save"
+msgstr "Зберегти"
+
+msgctxt "Views.Request.Create"
+msgid "New request"
+msgstr "Нове звернення"
+
+msgctxt "Views.Shared._Layout"
+msgid "My Requests"
+msgstr "Мої звернення"
