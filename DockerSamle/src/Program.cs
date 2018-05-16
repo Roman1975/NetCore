@@ -17,9 +17,7 @@ namespace GaugeCommand
     {
         public static void Main(string[] args)
         {
-            BuildWebHost(args).Run();
-
-            // todo: add migration on start
+            // add migration on start
             var host = BuildWebHost(args);
 
             using (var scope = host.Services.CreateScope())
@@ -28,7 +26,9 @@ namespace GaugeCommand
 
                 try
                 {
-                    services.GetService<AppDbContext>().Database.Migrate();
+                    var ctx = services.GetService<AppDbContext>();
+                    ctx.Database.EnsureCreated();
+                    ctx.Database.Migrate();
                 }
                 catch (Exception ex)
                 {
