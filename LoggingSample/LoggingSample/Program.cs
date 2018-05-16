@@ -15,7 +15,6 @@ namespace LoggingSample
         public static void Main(string[] args)
         {
             var webHost = new WebHostBuilder()
-                .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .ConfigureAppConfiguration((hostingContext, config) =>
                 {
@@ -34,6 +33,41 @@ namespace LoggingSample
                 })
                 .UseStartup<Startup>()
                 .Build();
+
+
+
+            using (var scope = webHost.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                var logger = services.GetRequiredService<ILogger<Program>>();
+                var context = services.GetRequiredService<TodoContext>();
+                var env = services.GetRequiredService<IHostingEnvironment>();
+
+                if (env.IsDevelopment())
+                {
+                    try
+                    {
+                        TodoContextInitializer.Seed(context);
+                        logger.LogInformation("Database seeding complete");
+                    }
+                    catch (Exception ex)
+                    {
+                        logger.LogError(ex, "An error occurred while seeding the database.");
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        context.Database.Migrate();
+                        logger.LogInformation("Database migration complete");
+                    }
+                    catch (Exception ex)
+                    {
+                        logger.LogError(ex, "An error occurred while migrating the database.");
+                    }
+                }
+            }
 
             webHost.Run();
         }

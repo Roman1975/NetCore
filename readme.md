@@ -30,6 +30,18 @@ So I think a little bit and started with designing REST API with following featu
 #### Exploring Automapper in AutomapperTest
 * main goal - feel the benefits in real world of layered app
 
+#### LocalizationSample
+* explore Net built-in resx localization
+* use PO files for localization with netcore
+
+#### DockerSample
+* explore docker, create two containers and link it. 
+
+### Double DB Provider
+* use sql server and postgres as as db providers
+* generate migrations for each provider separately
+* run the same code on win (sql) and mac (postgres)
+
 #### Requirements:
 * OSX (could be linux or windows, it’s really doesn’t matter. If so just start with .Net core and PostgreeSQL on choosen platform)
 

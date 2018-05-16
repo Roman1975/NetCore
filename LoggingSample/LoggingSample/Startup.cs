@@ -50,41 +50,6 @@ namespace LoggingSample
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            using (var scope = app.ApplicationServices.CreateScope())
-            {
-                var services = scope.ServiceProvider;
-                var logger = services.GetRequiredService<ILogger<Program>>();
-                var context = services.GetRequiredService<TodoContext>();
-                //var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
-                //var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
-
-                if (env.IsDevelopment())
-                {
-                    app.UseDeveloperExceptionPage();
-                    try
-                    {
-                        TodoContextInitializer.Seed(context);
-                        logger.LogInformation("Database seeding complete");
-                    }
-                    catch (Exception ex)
-                    {
-                        logger.LogError(ex, "An error occurred while seeding the database.");
-                    }
-                }
-                else
-                {
-                    try
-                    {
-                        context.Database.Migrate();
-                        logger.LogInformation("Database migration complete");
-                    }
-                    catch (Exception ex)
-                    {
-                        logger.LogError(ex, "An error occurred while migrating the database.");
-                    }
-                }
-            }
-
             // read more here https://andrewlock.net/adding-cache-control-headers-to-static-files-in-asp-net-core/
             app.UseStaticFiles(new StaticFileOptions
             {
@@ -96,7 +61,7 @@ namespace LoggingSample
                 }
             });
 
-            app.UseMvc();
+            app.UseMvcWithDefaultRoute();
         }
     }
 }

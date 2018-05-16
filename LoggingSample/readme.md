@@ -1,9 +1,10 @@
+# Change log
 1. Prepare source codes
-    - create file ".deployment" in root folder
+    - create file ".deployment" in root folder for Azure deployment
     - in [config] section setup main project project = LoggingSample/LoggingSample.csproj
     - check-in changes
 
-2. create web app with free plan
+2. Azure console: create web app with free plan
 3. create connection string specific for slot = production.db, check "slot specific" = false
 4. manually created app_data folder
 5. setup deployment multi project solution from github
