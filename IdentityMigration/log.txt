@@ -14,4 +14,12 @@
 15. back up old database, that I copied from net 4.6
 16. run update-database
 17. run and check aspnet users - it works!
+18. explore IdentityServer4 with EF storage and ASP.Net Core Identity
+19. NEXT TODO:
+    + create architecture map (Identity server - IDS, Resourcer server - RS, Clients)
+    + port auth to EnergySuite.SelfService.Identity (aka SSI)
+    - adopt SSI GUI to existing ESO solution
+    - porting exiting solution for register/login/logout/forgot password/reset password/twoFA/roles - just write down all features in old solution, 
+    - porting existing RS
+    - porting existing MVC client
 

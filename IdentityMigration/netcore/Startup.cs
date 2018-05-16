@@ -49,44 +49,15 @@ namespace netcore
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-
-            using (var scope = app.ApplicationServices.CreateScope())
+            if (env.IsDevelopment())
             {
-                var services = scope.ServiceProvider;
-                var logger = services.GetRequiredService<ILogger<Program>>();
-                var context = services.GetRequiredService<MyDbContext>();
-                //var userManager = services.GetRequiredService<UserManager<MyUser>>();
-                //var roleManager = services.GetRequiredService<RoleManager<MyRole>>();
-
-                if (env.IsDevelopment())
-                {
-                    app.UseDeveloperExceptionPage();
-                    app.UseDatabaseErrorPage();
-
-                    try
-                    {
-                        //TodoContextInitializer.Seed(context);
-                        logger.LogInformation("Database seeding complete");
-                    }
-                    catch (Exception ex)
-                    {
-                        logger.LogError(ex, "An error occurred while seeding the database.");
-                    }
-                }
-                else
-                {
-                   app.UseExceptionHandler("/Home/Error");
-                   try
-                    {
-                        context.Database.Migrate();
-                        logger.LogInformation("Database migration complete");
-                    }
-                    catch (Exception ex)
-                    {
-                        logger.LogError(ex, "An error occurred while migrating the database.");
-                    }
-                }
-            }    
+                app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+            }
 
             app.UseAuthentication();
 
