@@ -5,6 +5,7 @@ using LocalizationSample.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Net.Http.Headers;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Localization.Routing;
 using Microsoft.AspNetCore.Mvc;
@@ -94,7 +95,16 @@ namespace LocalizationSample
             }
 
             app.UseResponseCompression();
-            app.UseStaticFiles();
+            // read more here https://andrewlock.net/adding-cache-control-headers-to-static-files-in-asp-net-core/
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                OnPrepareResponse = ctx =>
+                {
+                    const int durationInSeconds = 60 * 60 * 24;
+                    ctx.Context.Response.Headers[HeaderNames.CacheControl] =
+                        "public,max-age=" + durationInSeconds;
+                }
+            });
 
 
             var locOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
