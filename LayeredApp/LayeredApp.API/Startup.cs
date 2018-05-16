@@ -42,24 +42,14 @@ namespace API
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, MyDbContext context)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            loggerFactory.AddDebug();
-
             app.UseMvc(routes =>
                 {
                     routes.MapRoute(name: "default",
                                     template: "api/{controller=Default}/{action=Get}/{id?}");
                 });
 
-            // Create database on startup  
-            MyDbInitializer.Initialize(context);
-            
-            //using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
-            //{
-            //    serviceScope.ServiceProvider.GetService<MyDbContext>().Database.Migrate();
-            //}
         }
     }
 }
