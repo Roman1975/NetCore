@@ -22,7 +22,7 @@ namespace coreapiwithpostgresql
             Configuration = configuration;
         }
 
-        public IConfigurationRoot Configuration { get; }
+        public IConfiguration Configuration { get; }
 
         
         public void ConfigureServices(IServiceCollection services)

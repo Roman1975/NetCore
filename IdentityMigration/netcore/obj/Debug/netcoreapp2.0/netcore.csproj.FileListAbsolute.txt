@@ -1,4 +1,4 @@
-/Users/roman/Downloads/GitHub/NetCore/IdentityMigration/netcore/bin/Debug/netcoreapp2.0/app.db
+/Users/roman/Downloads/GitHub/NetCore/IdentityMigration/netcore/bin/Debug/netcoreapp2.0/app_data/app.db
 /Users/roman/Downloads/GitHub/NetCore/IdentityMigration/netcore/bin/Debug/netcoreapp2.0/netcore.deps.json
 /Users/roman/Downloads/GitHub/NetCore/IdentityMigration/netcore/bin/Debug/netcoreapp2.0/netcore.runtimeconfig.json
 /Users/roman/Downloads/GitHub/NetCore/IdentityMigration/netcore/bin/Debug/netcoreapp2.0/netcore.runtimeconfig.dev.json
@@ -16,7 +16,7 @@
 \\Mac\Home\Downloads\GitHub\NetCore\IdentityMigration\netcore\bin\Debug\netcoreapp2.0\netcore.runtimeconfig.dev.json
 \\Mac\Home\Downloads\GitHub\NetCore\IdentityMigration\netcore\bin\Debug\netcoreapp2.0\netcore.dll
 \\Mac\Home\Downloads\GitHub\NetCore\IdentityMigration\netcore\bin\Debug\netcoreapp2.0\netcore.pdb
-\\Mac\Home\Downloads\GitHub\NetCore\IdentityMigration\netcore\obj\Debug\netcoreapp2.0\netcore.csprojResolveAssemblyReference.cache
+\\Mac\Home\Downloads\GitHub\NetCore\IdentityMigration\netcore\obj\Debug\netcoreapp2.0\netcore.csprojAssemblyReference.cache
 \\Mac\Home\Downloads\GitHub\NetCore\IdentityMigration\netcore\obj\Debug\netcoreapp2.0\netcore.csproj.CoreCompileInputs.cache
 \\Mac\Home\Downloads\GitHub\NetCore\IdentityMigration\netcore\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
 \\Mac\Home\Downloads\GitHub\NetCore\IdentityMigration\netcore\obj\Debug\netcoreapp2.0\netcore.AssemblyInfoInputs.cache

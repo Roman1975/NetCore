@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore;
+using LoggingSample.Domain;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 namespace LoggingSample
@@ -43,6 +42,16 @@ namespace LoggingSample
                 var context = services.GetRequiredService<TodoContext>();
                 var env = services.GetRequiredService<IHostingEnvironment>();
 
+                try
+                {
+                    context.Database.Migrate();
+                    logger.LogInformation("Database migration complete");
+                }
+                catch (Exception ex)
+                {
+                    logger.LogError(ex, "An error occurred while migrating the database.");
+                }
+
                 if (env.IsDevelopment())
                 {
                     try
@@ -53,18 +62,6 @@ namespace LoggingSample
                     catch (Exception ex)
                     {
                         logger.LogError(ex, "An error occurred while seeding the database.");
-                    }
-                }
-                else
-                {
-                    try
-                    {
-                        context.Database.Migrate();
-                        logger.LogInformation("Database migration complete");
-                    }
-                    catch (Exception ex)
-                    {
-                        logger.LogError(ex, "An error occurred while migrating the database.");
                     }
                 }
             }

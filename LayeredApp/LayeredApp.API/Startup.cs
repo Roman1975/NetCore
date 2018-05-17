@@ -3,8 +3,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.EntityFrameworkCore.Infrastructure;
 using LayeredApp.Domain;
 using LayeredApp.Repository.Interface;
 using LayeredApp.Repository;
@@ -29,8 +27,7 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {
             var connectionString = Configuration["DbContextSettings:ConnectionString"];
-            services.AddEntityFramework()
-            .AddEntityFrameworkNpgsql()
+            services.AddEntityFrameworkNpgsql()
             .AddDbContext<MyDbContext>(optionsAction => optionsAction.UseNpgsql(connectionString));
             //
             services.AddSingleton<IUnitOfWork, UnitOfWork>();

@@ -4,6 +4,7 @@ using DoubleDbProvider.DomainPG;
 using System;
 using System.Linq;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
 
 namespace DoubleDbProvider.API
 {
@@ -12,8 +13,6 @@ namespace DoubleDbProvider.API
 
         public static void Initialize(SqlDbContext context)
         {
-
-
             //if(context.Kinds == null)
             context.Database.EnsureCreated();
 
@@ -45,8 +44,16 @@ namespace DoubleDbProvider.API
             var sql = services.GetService<SqlDbContext>();
             var pgsql = services.GetService<PostgresDbContext>();
 
-            Initialize(pgsql ?? sql);
-
+            if (pgsql != null)
+            {
+                pgsql.Database.Migrate();
+                Initialize(pgsql);
+            }
+            else
+            {
+                sql.Database.Migrate();
+                Initialize(sql);
+            }
         }
     }
 }

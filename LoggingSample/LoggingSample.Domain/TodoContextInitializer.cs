@@ -2,15 +2,12 @@ using System;
 using System.Linq;
 using LoggingSample.Domain.Model;
 
-
 namespace LoggingSample.Domain
 {
     public static class TodoContextInitializer
     {
         public static void Seed(TodoContext context)
         {
-            context.Database.EnsureCreated();
-
             if (!context.Todos.Any())
             {
                 // Seed Here
