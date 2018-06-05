@@ -41,19 +41,11 @@ namespace DoubleDbProvider.API
 
         internal static void Initialize(IServiceProvider services)
         {
-            var sql = services.GetService<SqlDbContext>();
-            var pgsql = services.GetService<PostgresDbContext>();
+            var ctx = services.GetService<SqlDbContext>();
+            ctx = ctx ?? services.GetService<PostgresDbContext>();
 
-            if (pgsql != null)
-            {
-                pgsql.Database.Migrate();
-                Initialize(pgsql);
-            }
-            else
-            {
-                sql.Database.Migrate();
-                Initialize(sql);
-            }
+            ctx.Database.Migrate();
+            Initialize(ctx);
         }
     }
 }

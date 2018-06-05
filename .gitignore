@@ -130,3 +130,8 @@ src/.vs/config/applicationhost.config
 
 # ignore mac os files
 .DS_Store
+IdentityMigration/netcore/.vs/netcore/v15/.suo
+IdentityMigration/netcore/.vs/netcore/v15/.suo
+IdentityMigration/netcore/obj/Debug/netcoreapp2.0/netcore.AssemblyInfo.cs
+IdentityMigration/netcore/obj/Debug/netcoreapp2.0/netcore.AssemblyInfoInputs.cache
+*.cache
